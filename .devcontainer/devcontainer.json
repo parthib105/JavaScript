@@ -13,6 +13,8 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
+	// Install Fira Code after container creation
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y fonts-firacode && npm install",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -20,12 +22,19 @@
 			"extensions": [
 				"esbenp.prettier-vscode",
 				"vscode-icons-team.vscode-icons",
-				"wayou.vscode-todo-highlight"
+				"wayou.vscode-todo-highlight",
+				"dbaeumer.vscode-eslint",
+				"oderwat.indent-rainbow"
 			],
 			"settings": {
+				"editor.fontFamily": "'Fira Code', monospace",
+				"editor.fontLigatures": true,
 				"editor.fontSize": 18,
+				"terminal.integrated.fontFamily": "Fira Code",
 				"terminal.integrated.fontSize": 16,
-				"editor.wordWrap": "on"
+				"editor.wordWrap": "on",
+				"files.autoSave": "onWindowChange",
+				"editor.formatOnSave": true
 			}
 		}
 	}
